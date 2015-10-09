@@ -72,7 +72,10 @@ class splunk::forwarder (
       subdir => $staging_subdir,
       before => Package[$package_name],
     }
+  } else {
+    $pkg_source = $package_source
   }
+
   package { $package_name:
     ensure          => installed,
     provider        => $pkg_provider,
