@@ -66,7 +66,6 @@ class splunk::forwarder (
     provider        => $pkg_provider,
     source          => $package_source,
     before          => Service[$virtual_service],
-    install_options => $splunk::params::forwarder_install_options,
     tag             => 'splunk_forwarder',
   }
   # Declare inputs and outputs specific to the forwarder profile
